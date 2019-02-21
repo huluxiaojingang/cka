@@ -12,6 +12,6 @@
 # k8s工作原理
 
 ## Pod创建过程
-- kubectl-> api-server create ReplicasSet
-- api-server-> etcd create ReplicasSet
+- kubectl-> api-server 创建 ReplicasSet
+- api-server-> etcd 创建 ReplicasSet
 - etcd-> api-server 
