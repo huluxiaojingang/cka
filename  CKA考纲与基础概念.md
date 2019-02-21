@@ -44,3 +44,13 @@
 - kubectl run --image my-deploy -o yaml --dry-run -> my-deploy.yaml 参数`--dry-run`不会创建对象，快速生成yaml模板
 - kubectl get statefulset/foo -o yaml --export > new.yaml get命令导出到yaml文件
 - kubectl explain pod.spec.affinity.podAffinity 查看字段拼写
+- kubectl get po --watch 观察Pod变化
+- kubectl get po -owide 查看更多信息
+- kubectl scale deployment nginx --replicas=3 水平扩容
+
+## 课后作业
+- 通过命令行，使用nginx镜像创建一个pod
+
+```
+kubectl run nginx --image=nginx
+```
