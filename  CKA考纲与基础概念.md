@@ -35,4 +35,6 @@
 - 一组功能相关的Pod封装，Deployment，StatefulSet，DaemonSet，Job
 ### Service
 - Pod防丢失
-- 给一组Pod设置反向代理
+- 给一组Pod设置反向代理，给Pod设置访问代理
+### labels-selector
+- 打标签做查询
