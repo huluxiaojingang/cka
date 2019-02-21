@@ -61,5 +61,7 @@ kubectl run nginx --image=nginx
 kubectl run my-nginx --image=nginx --replicas=2 --expose=true --port=80
 ```
 
-kubectl run -h 获取命令帮助
-
+获取命令帮助
+```
+kubectl run -h
+```
