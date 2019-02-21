@@ -24,3 +24,15 @@
 - api-server -> etcd 更新Pod
 - etcd -> api-server 上报事件 Pod Bound(Updated)
 - api-server -> kubelet 上报事件 Pod Bound(Updated)
+
+## 基本概念
+### Pod
+- 一组功能相关的Container的封装
+- 共享存储和Network Namespace
+- K8S调度和作业运行的基本单位
+- 容易丢失
+### Workloads
+- 一组功能相关的Pod封装，Deployment，StatefulSet，DaemonSet，Job
+### Service
+- Pod防丢失
+- 给一组Pod设置反向代理
