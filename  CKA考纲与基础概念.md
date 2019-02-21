@@ -38,3 +38,9 @@
 - 给一组Pod设置反向代理，给Pod设置访问代理
 ### labels-selector
 - 打标签做查询
+
+## API对象基本构成
+- typeMeta apiVersion、kind
+- objectMeta name、labels
+- spec     期望状态
+- status  实际状态
