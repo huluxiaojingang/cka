@@ -12,6 +12,15 @@
 # k8s工作原理
 
 ## Pod创建过程
-- kubectl-> api-server 创建 ReplicasSet
-- api-server-> etcd 创建 ReplicasSet
-- etcd-> api-server 
+- kubectl -> api-server 创建 ReplicasSet
+- api-server -> etcd 创建 ReplicasSet
+- etcd -> api-server 上报事件 ReplicasSet Created
+- api-server -> controller-manager 上报事件 ReplicasSet Created
+- controller-manager -> api-server 创建 Pod
+- api-server -> etcd 创建 Pod
+- etcd -> api-server 上报事件 Pod Created
+- api-server -> scheduler 上报事件 Pod Created
+- scheduler -> api-server 更新Pod，按调度结果绑定node
+- api-server -> etcd 更新Pod
+- etcd -> api-server 上报事件 Pod Bound(Updated)
+- api-server -> kubelet 上报事件 Pod Bound(Updated)
