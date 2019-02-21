@@ -54,3 +54,12 @@
 ```
 kubectl run nginx --image=nginx
 ```
+
+- 通过单个命令创建一个deployment并暴露service，使用nginx镜像，2个副本
+
+```
+kubectl run my-nginx --image=nginx --replicas=2 --expose=true --port=80
+```
+
+kubectl run -h 获取命令帮助
+
