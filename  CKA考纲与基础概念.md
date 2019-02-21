@@ -44,3 +44,8 @@
 - metaMeta name、labels
 - spec     期望状态
 - status   实际状态
+
+## 常用命令
+- kubectl create expose run set get edit delete ...
+- kubectl -h 查询命令帮助文档
+- kubectl explain 查询资源定义，查看资源有哪些字段
