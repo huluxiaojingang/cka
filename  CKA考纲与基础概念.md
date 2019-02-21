@@ -41,6 +41,6 @@
 
 ## API对象基本构成
 - typeMeta apiVersion、kind
-- objectMeta name、labels
+- metaMeta name、labels
 - spec     期望状态
-- status  实际状态
+- status   实际状态
