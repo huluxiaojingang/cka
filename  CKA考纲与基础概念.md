@@ -50,6 +50,6 @@
 - kubectl -h 查询命令帮助文档
 - kubectl explain 查询资源定义，查看资源有哪些字段
 - kubectl describe 查询资源名称缩写
-- kubectl run --image my-deploy -o yaml --dry-run -> my-deploy.yaml `参数--dry-run不会创建对象`，快速生成yaml模板
+- kubectl run --image my-deploy -o yaml --dry-run -> my-deploy.yaml 参数`--dry-run`不会创建对象，快速生成yaml模板
 - kubectl get statefulset/foo -o yaml --export > new.yaml get命令导出到yaml文件
 - kubectl explain pod.spec.affinity.podAffinity 查看字段拼写
