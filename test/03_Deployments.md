@@ -95,8 +95,10 @@ curl <pod.ip>:9876/info
 {... "version": "0.9"...}   Note that the version now is "0.9"
 ```
 
+```
+kubectl delete deploy sise-deploy
 
-
+```
 
 
 
