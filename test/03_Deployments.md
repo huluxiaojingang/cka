@@ -79,6 +79,20 @@ roll back
 ```
 kubectl rollout undo deploy/sise-deploy --to-revision=1
 
+
+kubectl rollout history deploy/sise-deploy
+
+deployments "sise-deploy"
+REVISION        CHANGE-CAUSE
+2               <none>
+3               <none>
+
+new history is created. After roll back the version is "0.9".let's test.
+
+kubectl get pods -o wide
+
+curl <pod.ip>:9876/info 
+{... "version": "0.9"...}   Note that the version now is "0.9"
 ```
 
 
