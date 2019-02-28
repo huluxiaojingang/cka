@@ -1,6 +1,6 @@
 
 
-deployment:
+create deployment
 ```
 apiVersion: v1
 kind: Deployment
@@ -9,7 +9,8 @@ metadata:
 spec:
   replicas: 1
   selector:
-    app: sise
+    matchLabels:
+      app: sise
   template:
     metadata:
       name: somename
@@ -23,7 +24,7 @@ spec:
         - containerPort: 9876
 ```
 
-service:
+create service
 ```
 apiVersion: v1
 kind: Service
@@ -36,3 +37,21 @@ spec:
   selector:
     app: sise
 ```
+
+```
+kubectl get services
+
+curl <service_ip>:80/info
+```
+
+
+
+
+
+
+
+
+
+
+
+
