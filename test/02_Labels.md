@@ -54,6 +54,9 @@ kubectl get pods -l 'env in (production,development)'
 
 delete
 ```
+kubectl delete pods -l 'env in (production, development)'
+kubectl delete pods labelex
+kubectl delete pods labelexother
 
 ```
 
