@@ -38,15 +38,31 @@ spec:
     app: sise
 ```
 
+
+get/describe 
 ```
-kubectl get services
+Pod IP: 10.244.1.24
+Service ClusterIP: 10.107.29.123 
 
-curl <service_ip>:80/info
+curl 10.107.29.123:80/info
+curl 10.244.1.24:9876/info
+
+# iptables config the rules forward the traffic to the pod
+iptables-save | grep simpleservice
+
 ```
 
+scale
 
+```
+kubectl scale deployment rcsise --replicas=2
+```
 
-
+```
+kubectl delete svc simpleservice
+kubectl delete deployment rcsise
+ 
+```
 
 
 
