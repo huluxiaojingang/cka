@@ -1,0 +1,5 @@
+
+
+```
+kubectl logs -f <PodName> -c <ContainerName>
+```
