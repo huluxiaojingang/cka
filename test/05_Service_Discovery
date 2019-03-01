@@ -33,3 +33,66 @@ spec:
   selector:
     app: sise
 ```
+
+test the service from the node 
+```
+kubectl get svc
+service ip: 10.98.240.94
+curl  10.98.240.94:80/info
+```
+
+test the service from other pods
+```
+Service DNS A record:
+
+Normal return cluster IP
+$SVC.$NAMESPACE.svc.cluster.local
+
+Headless return Pods IP list
+$SVC.$NAMESPACE.svc.cluster.local
+
+```
+
+busybox with nslookup command pod:
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+  namespace: default
+spec:
+  containers:
+  - name: busybox
+    image: busybox:1.28
+    command:
+    - sleep
+    - "3600"
+    imagePullPolicy: IfNotPresent
+  restartPolicy: Always
+ ```
+ 
+ enter the pod container busybox
+ ```
+ kubectl exec -it busybox -c busybox -- nslookup thesvc.default.svc.cluster.local 
+ 
+ # shows like
+ Server:    10.96.0.10
+ Address 1: 10.96.0.19 kube-dns.kube-system.svc.cluster.local
+ 
+ Name:      thesvc.default.svc.cluster.local
+ Address 1: 10.98.240.94 thesvc.default.svc.cluster.local
+ ```
+ 
+ 
+```
+kubectl delete deploy rcsise
+kubectl delete svc thesvc
+kubectl delete po busybox
+
+```
+ 
+ 
+ 
+ 
+ 
+ 
